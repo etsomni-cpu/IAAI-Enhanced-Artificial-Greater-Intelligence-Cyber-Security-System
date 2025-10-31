@@ -1,16 +1,16 @@
-#!/data/data/com.termux/files/usr/bin/bash
-# deploy_iaai_resilience_termux.sh
+!/data/data/com.termux/files/usr/bin/bash
+deploy_iaai_resilience_termux.sh
 
 echo "🛡️ IAAI Democratic Resilience Lab - Termux Deployment"
 echo "🔒 Eric Todd Sawyer AI Integrated System"
 echo "📱 Mobile Anti-Authoritarian Defense Platform"
 echo "=============================================="
 
-# Configuration
+Configuration
 IAAI_HOME="$HOME/iaai_democratic_resilience"
 LOG_FILE="$IAAI_HOME/deployment.log"
 
-# Colors
+Colors
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m'
@@ -23,7 +23,7 @@ info() {
     echo -e "${BLUE}[INFO]${NC} $1" | tee -a "$LOG_FILE"
 }
 
-# Create directory structure
+Create directory structure
 create_directories() {
     log "Creating IAAI Resilience directory structure..."
     
@@ -39,21 +39,21 @@ create_directories() {
     log "Directory structure created at: $IAAI_HOME"
 }
 
-# Install dependencies
+Install dependencies
 install_dependencies() {
     log "Installing IAAI Resilience dependencies..."
     
     pkg update -y && pkg upgrade -y
     
-    # Install required packages
+    Install required packages
     pkg install -y python git wget curl openssl-tool \
         python-pip rust libjpeg-turbo || exit 1
         
-    # Install Python dependencies
+    Install Python dependencies
     pip install --upgrade pip
     
     cat > "$IAAI_HOME/requirements_iaai.txt" << 'EOF'
-# IAAI Democratic Resilience Dependencies
+IAAI Democratic Resilience Dependencies
 openai>=1.0.0
 cryptography>=41.0.0
 requests>=2.31.0
@@ -70,16 +70,16 @@ EOF
     pip install -r "$IAAI_HOME/requirements_iaai.txt" || exit 1
 }
 
-# Deploy core system files
+Deploy core system files
 deploy_system_files() {
     log "Deploying IAAI Resilience system files..."
     
-    # Create the main resilience engine (content from first code block)
-    # [All the Python classes from above would be saved to appropriate files]
+    Create the main resilience engine (content from first code block)
+    [All the Python classes from above would be saved to appropriate files]
     
-    # Create main launcher
+    Create main launcher
     cat > "$IAAI_HOME/main.py" << 'EOF'
-#!/data/data/com.termux/files/usr/bin/python3
+!/data/data/com.termux/files/usr/bin/python3
 """
 IAAI Democratic Resilience Lab - Main Launcher
 Eric Todd Sawyer AI Integrated System
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     main()
 EOF
 
-    # Create management script
+    Create management script
     cat > "$IAAI_HOME/manage_iaai.sh" << 'EOF'
 #!/data/data/com.termux/files/usr/bin/bash
 # IAAI Resilience Management Script
@@ -148,14 +148,14 @@ EOF
     chmod +x "$IAAI_HOME/main.py"
 }
 
-# Final setup
+Final setup
 final_setup() {
     log "Performing final IAAI setup..."
     
-    # Set secure permissions
+    Set secure permissions
     chmod -R 700 "$IAAI_HOME"
     
-    # Create success marker
+    Create success marker
     cat > "$IAAI_HOME/DEPLOYMENT_SUCCESS" << EOF
 IAAI Democratic Resilience Lab - Termux Deployment
 =================================================
@@ -215,8 +215,8 @@ main() {
     echo
     echo "📊 MANAGEMENT:"
     echo "   ./manage_iaai.sh status  # Check lab status"
-    echo "   ./manage_iaai.sh stop    # Stop lab"
-    echo "   ./manage_iaai.sh logs    # View logs"
+    echo "   ./manage_iaai.sh stop    Stop lab"
+    echo "   ./manage_iaai.sh logs    View logs"
     echo
     echo "🔒 SECURITY FEATURES:"
     echo "   • Authoritarian Algorithm Interpretation"
