@@ -93,8 +93,8 @@ EOF
 
     Create management script
     cat > "$IAAI_HOME/manage_iaai.sh" << 'EOF'
-#!/data/data/com.termux/files/usr/bin/bash
-# IAAI Resilience Management Script
+!/data/data/com.termux/files/usr/bin/bash
+IAAI Resilience Management Script
 
 IAAI_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -133,7 +133,7 @@ case "$1" in
     logs)
         tail -f logs/iaai_service.log
         ;;
-    *)
+    )
         echo "Usage: $0 {start|stop|status|logs}"
         echo "  start  - Start IAAI Democratic Resilience Lab"
         echo "  stop   - Stop IAAI Resilience Lab" 
@@ -228,5 +228,3 @@ main() {
     echo "© 2024 Eric Todd Sawyer - IAAI Democratic Resilience Lab"
     echo "™ All Rights Reserved - Anti-Authoritarian AI Systems"
 }
-
-main "$@"
