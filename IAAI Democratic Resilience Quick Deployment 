@@ -1,0 +1,12 @@
+bash
+```
+nano deploy_iaai_resilience.sh
+# Paste the entire deployment script above
+chmod +x deploy_iaai_resilience.sh
+./deploy_iaai_resilience.sh
+```
+bash
+```
+cd ~/iaai_democratic_resilience
+./manage_iaai.sh start
+```
